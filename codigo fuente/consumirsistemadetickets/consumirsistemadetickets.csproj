@@ -1,0 +1,522 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\sistemadetickets\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\sistemadetickets\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{ED014516-7A64-47CB-A543-74E1078F5C1F}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>consumirsistemadetickets</RootNamespace>
+    <AssemblyName>consumirsistemadetickets</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44313</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.5.0, Culture=neutral, PublicKeyToken=0e99375e54769942" />
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Web, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="Google.Protobuf, Version=3.11.4.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604" />
+    <Reference Include="K4os.Compression.LZ4.Streams, Version=1.1.11.0, Culture=neutral, PublicKeyToken=2186fa9121ef231d" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="MySql.Data, Version=8.0.23.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
+    <Reference Include="Renci.SshNet, Version=2020.0.0.0, Culture=neutral, PublicKeyToken=1cee9f8bde3db106" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Ubiety.Dns.Core, Version=2.2.1.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d" />
+    <Reference Include="Zstandard.Net, Version=1.1.7.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\sistemadetickets\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Administrador.aspx" />
+    <Content Include="bootstrap\bootstrap-grid.css.map" />
+    <Content Include="bootstrap\bootstrap-grid.min.css.map" />
+    <Content Include="bootstrap\bootstrap-grid.rtl.css.map" />
+    <Content Include="bootstrap\bootstrap-grid.rtl.min.css.map" />
+    <Content Include="bootstrap\bootstrap-reboot.css.map" />
+    <Content Include="bootstrap\bootstrap-reboot.min.css.map" />
+    <Content Include="bootstrap\bootstrap-reboot.rtl.css.map" />
+    <Content Include="bootstrap\bootstrap-reboot.rtl.min.css.map" />
+    <Content Include="bootstrap\bootstrap-utilities.css.map" />
+    <Content Include="bootstrap\bootstrap-utilities.min.css.map" />
+    <Content Include="bootstrap\bootstrap-utilities.rtl.css.map" />
+    <Content Include="bootstrap\bootstrap-utilities.rtl.min.css.map" />
+    <Content Include="bootstrap\bootstrap.css.map" />
+    <Content Include="bootstrap\bootstrap.min.css.map" />
+    <Content Include="bootstrap\bootstrap.rtl.css.map" />
+    <Content Include="bootstrap\bootstrap.rtl.min.css.map" />
+    <Content Include="bootstrap\bootstrap-grid.css" />
+    <Content Include="bootstrap\bootstrap-grid.min.css" />
+    <Content Include="bootstrap\bootstrap-grid.rtl.css" />
+    <Content Include="bootstrap\bootstrap-grid.rtl.min.css" />
+    <Content Include="bootstrap\bootstrap-reboot.css" />
+    <Content Include="bootstrap\bootstrap-reboot.min.css" />
+    <Content Include="bootstrap\bootstrap-reboot.rtl.css" />
+    <Content Include="bootstrap\bootstrap-reboot.rtl.min.css" />
+    <Content Include="bootstrap\bootstrap-utilities.css" />
+    <Content Include="bootstrap\bootstrap-utilities.min.css" />
+    <Content Include="bootstrap\bootstrap-utilities.rtl.css" />
+    <Content Include="bootstrap\bootstrap-utilities.rtl.min.css" />
+    <Content Include="bootstrap\bootstrap.css" />
+    <Content Include="bootstrap\bootstrap.min.css" />
+    <Content Include="bootstrap\bootstrap.rtl.css" />
+    <Content Include="bootstrap\bootstrap.rtl.min.css" />
+    <Content Include="bootstrap\Style.css" />
+    <None Include="Connected Services\wsatencionticketc\wsatencionticket.wsdl" />
+    <None Include="Connected Services\wsempleadoc\wsempleado.disco" />
+    <None Include="Connected Services\wsempleadoc\configuration91.svcinfo" />
+    <None Include="Connected Services\wsempleadoc\configuration.svcinfo" />
+    <None Include="Connected Services\wsempleadoc\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Connected Services\wsescritoriovirtualc\wsescritorio_virtual.wsdl" />
+    <None Include="Connected Services\wsmotivodeatencionc\ws_motivo_de_atencion.wsdl" />
+    <None Include="Connected Services\wsreportes\reportes.wsdl" />
+    <None Include="Connected Services\wssolicitantec\wssolicitante.wsdl" />
+    <None Include="Connected Services\wsticketc\wsticket.wsdl" />
+    <None Include="Connected Services\wsusuarioc\wsusuario.disco" />
+    <None Include="Connected Services\wsusuarioc\configuration91.svcinfo" />
+    <None Include="Connected Services\wsusuarioc\configuration.svcinfo" />
+    <None Include="Connected Services\wsusuarioc\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Connected Services\wssolicitantec\wssolicitante.disco" />
+    <None Include="Connected Services\wssolicitantec\configuration91.svcinfo" />
+    <None Include="Connected Services\wssolicitantec\configuration.svcinfo" />
+    <None Include="Connected Services\wssolicitantec\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Connected Services\wsticketc\wsticket.disco" />
+    <None Include="Connected Services\wsticketc\configuration91.svcinfo" />
+    <None Include="Connected Services\wsticketc\configuration.svcinfo" />
+    <None Include="Connected Services\wsticketc\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Connected Services\wsescritoriovirtualc\wsescritorio_virtual.disco" />
+    <None Include="Connected Services\wsescritoriovirtualc\configuration91.svcinfo" />
+    <None Include="Connected Services\wsescritoriovirtualc\configuration.svcinfo" />
+    <None Include="Connected Services\wsescritoriovirtualc\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Connected Services\wsmotivodeatencionc\ws_motivo_de_atencion.disco" />
+    <None Include="Connected Services\wsmotivodeatencionc\configuration91.svcinfo" />
+    <None Include="Connected Services\wsmotivodeatencionc\configuration.svcinfo" />
+    <None Include="Connected Services\wsmotivodeatencionc\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Connected Services\wsatencionticketc\wsatencionticket.disco" />
+    <None Include="Connected Services\wsatencionticketc\configuration91.svcinfo" />
+    <None Include="Connected Services\wsatencionticketc\configuration.svcinfo" />
+    <None Include="Connected Services\wsatencionticketc\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Connected Services\wsreportes\reportes.disco" />
+    <None Include="Connected Services\wsreportes\configuration91.svcinfo" />
+    <None Include="Connected Services\wsreportes\configuration.svcinfo" />
+    <None Include="Connected Services\wsreportes\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="contactenos.aspx" />
+    <Content Include="css\main.css" />
+    <Content Include="css\util.css" />
+    <Content Include="fondo\fondoo.jpg" />
+    <Content Include="fondo\Panel.png" />
+    <Content Include="formularios.aspx" />
+    <Content Include="frmsolicitarticket.aspx" />
+    <Content Include="f_atencionticket.aspx" />
+    <Content Include="f_empleado.aspx" />
+    <Content Include="f_escritoriovirtual.aspx" />
+    <Content Include="f_motivoatencion.aspx" />
+    <Content Include="f_solicitante.aspx" />
+    <Content Include="f_ticket.aspx" />
+    <Content Include="f_usuario.aspx" />
+    <Content Include="Home.aspx" />
+    <Content Include="images\bg-01.jpg" />
+    <Content Include="images\fondos web.jpg" />
+    <Content Include="images\icons\favicon.ico" />
+    <Content Include="images\webpage.jpg" />
+    <Content Include="login.aspx" />
+    <Content Include="menureportes.aspx" />
+    <Content Include="Nosotros.aspx" />
+    <Content Include="paginaespera.aspx" />
+    <Content Include="paginas\frmatender.aspx" />
+    <Content Include="paginas\frmlista.aspx" />
+    <Content Include="reportes\frmreportefechas.aspx" />
+    <Content Include="reportes\frmreporteticket.aspx" />
+    <Content Include="usuario.aspx" />
+    <Content Include="Web.config" />
+    <Content Include="Properties\DataSources\System.Data.DataSet.datasource" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Administrador.aspx.cs">
+      <DependentUpon>Administrador.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administrador.aspx.designer.cs">
+      <DependentUpon>Administrador.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\wsatencionticketc\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\wsempleadoc\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\wsescritoriovirtualc\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\wsmotivodeatencionc\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\wsreportes\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\wssolicitantec\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\wsticketc\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\wsusuarioc\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="contactenos.aspx.cs">
+      <DependentUpon>contactenos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="contactenos.aspx.designer.cs">
+      <DependentUpon>contactenos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="dts_rpt_escrit.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dts_rpt_escrit.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dts_rpt_ticket.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dts_rpt_ticket.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="formularios.aspx.cs">
+      <DependentUpon>formularios.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="formularios.aspx.designer.cs">
+      <DependentUpon>formularios.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="frmsolicitarticket.aspx.cs">
+      <DependentUpon>frmsolicitarticket.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="frmsolicitarticket.aspx.designer.cs">
+      <DependentUpon>frmsolicitarticket.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="f_atencionticket.aspx.cs">
+      <DependentUpon>f_atencionticket.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="f_atencionticket.aspx.designer.cs">
+      <DependentUpon>f_atencionticket.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="f_empleado.aspx.cs">
+      <DependentUpon>f_empleado.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="f_empleado.aspx.designer.cs">
+      <DependentUpon>f_empleado.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="f_escritoriovirtual.aspx.cs">
+      <DependentUpon>f_escritoriovirtual.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="f_escritoriovirtual.aspx.designer.cs">
+      <DependentUpon>f_escritoriovirtual.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="f_motivoatencion.aspx.cs">
+      <DependentUpon>f_motivoatencion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="f_motivoatencion.aspx.designer.cs">
+      <DependentUpon>f_motivoatencion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="f_solicitante.aspx.cs">
+      <DependentUpon>f_solicitante.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="f_solicitante.aspx.designer.cs">
+      <DependentUpon>f_solicitante.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="f_ticket.aspx.cs">
+      <DependentUpon>f_ticket.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="f_ticket.aspx.designer.cs">
+      <DependentUpon>f_ticket.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="f_usuario.aspx.cs">
+      <DependentUpon>f_usuario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="f_usuario.aspx.designer.cs">
+      <DependentUpon>f_usuario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Home.aspx.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Home.aspx.designer.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="login.aspx.cs">
+      <DependentUpon>login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="login.aspx.designer.cs">
+      <DependentUpon>login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="menureportes.aspx.cs">
+      <DependentUpon>menureportes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="menureportes.aspx.designer.cs">
+      <DependentUpon>menureportes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Nosotros.aspx.cs">
+      <DependentUpon>Nosotros.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Nosotros.aspx.designer.cs">
+      <DependentUpon>Nosotros.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="paginaespera.aspx.cs">
+      <DependentUpon>paginaespera.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="paginaespera.aspx.designer.cs">
+      <DependentUpon>paginaespera.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="paginas\frmatender.aspx.cs">
+      <DependentUpon>frmatender.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="paginas\frmatender.aspx.designer.cs">
+      <DependentUpon>frmatender.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="paginas\frmlista.aspx.cs">
+      <DependentUpon>frmlista.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="paginas\frmlista.aspx.designer.cs">
+      <DependentUpon>frmlista.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="reportes\frmreportefechas.aspx.cs">
+      <DependentUpon>frmreportefechas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="reportes\frmreportefechas.aspx.designer.cs">
+      <DependentUpon>frmreportefechas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="reportes\frmreporteticket.aspx.cs">
+      <DependentUpon>frmreporteticket.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="reportes\frmreporteticket.aspx.designer.cs">
+      <DependentUpon>frmreporteticket.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="rptescrit.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptescrit.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="rptticket.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptticket.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="usuario.aspx.cs">
+      <DependentUpon>usuario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="usuario.aspx.designer.cs">
+      <DependentUpon>usuario.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="dts_rpt_ticket.xsc">
+      <DependentUpon>dts_rpt_ticket.xsd</DependentUpon>
+    </Content>
+    <Content Include="dts_rpt_escrit.xsc">
+      <DependentUpon>dts_rpt_escrit.xsd</DependentUpon>
+    </Content>
+    <None Include="Connected Services\wsempleadoc\wsempleado.wsdl" />
+    <None Include="Connected Services\wsusuarioc\wsusuario.wsdl" />
+    <None Include="dts_rpt_escrit.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dts_rpt_escrit.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="dts_rpt_escrit.xss">
+      <DependentUpon>dts_rpt_escrit.xsd</DependentUpon>
+    </Content>
+    <None Include="dts_rpt_ticket.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dts_rpt_ticket.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="dts_rpt_ticket.xss">
+      <DependentUpon>dts_rpt_ticket.xsd</DependentUpon>
+    </Content>
+    <None Include="packages.config" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\wsatencionticketc\" />
+    <WCFMetadataStorage Include="Connected Services\wsempleadoc\" />
+    <WCFMetadataStorage Include="Connected Services\wsescritoriovirtualc\" />
+    <WCFMetadataStorage Include="Connected Services\wsmotivodeatencionc\" />
+    <WCFMetadataStorage Include="Connected Services\wsreportes\" />
+    <WCFMetadataStorage Include="Connected Services\wssolicitantec\" />
+    <WCFMetadataStorage Include="Connected Services\wsticketc\" />
+    <WCFMetadataStorage Include="Connected Services\wsusuarioc\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="rptescrit.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptescrit.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rptticket.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptticket.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>55039</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44313/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Este proyecto hace referencia a los paquetes NuGet que faltan en este equipo. Use la restauración de paquetes NuGet para descargarlos. Para obtener más información, consulte http://go.microsoft.com/fwlink/?LinkID=322105. El archivo que falta es {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\sistemadetickets\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\sistemadetickets\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="Listadoats">
+        <s:complexType />
+      </s:element>
+      <s:element name="ListadoatsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListadoatsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="atencionticket">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idAtencionTicket" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="atencionticketResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="atencionticketResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="insertatencionticket">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idTicket" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="idEscritorio" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="idEmpleado" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="estado_de_ticket" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="observaciones" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="insertatencionticketResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="insertatencionticketResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="actualizaratencionticket">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idAtencionTicket" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="idTicket" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="idEscritorio" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="idEmpleado" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="estado_de_ticket" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="observaciones" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="actualizaratencionticketResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="actualizaratencionticketResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="eliminaratencion">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idAtencionTicket" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="eliminaratencionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="eliminaratencionResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="buscar_por_fechas">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="fecha" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="buscar_por_fechasResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="buscar_por_fechasResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="ListadoatsSoapIn">
+    <wsdl:part name="parameters" element="tns:Listadoats" />
+  </wsdl:message>
+  <wsdl:message name="ListadoatsSoapOut">
+    <wsdl:part name="parameters" element="tns:ListadoatsResponse" />
+  </wsdl:message>
+  <wsdl:message name="atencionticketSoapIn">
+    <wsdl:part name="parameters" element="tns:atencionticket" />
+  </wsdl:message>
+  <wsdl:message name="atencionticketSoapOut">
+    <wsdl:part name="parameters" element="tns:atencionticketResponse" />
+  </wsdl:message>
+  <wsdl:message name="insertatencionticketSoapIn">
+    <wsdl:part name="parameters" element="tns:insertatencionticket" />
+  </wsdl:message>
+  <wsdl:message name="insertatencionticketSoapOut">
+    <wsdl:part name="parameters" element="tns:insertatencionticketResponse" />
+  </wsdl:message>
+  <wsdl:message name="actualizaratencionticketSoapIn">
+    <wsdl:part name="parameters" element="tns:actualizaratencionticket" />
+  </wsdl:message>
+  <wsdl:message name="actualizaratencionticketSoapOut">
+    <wsdl:part name="parameters" element="tns:actualizaratencionticketResponse" />
+  </wsdl:message>
+  <wsdl:message name="eliminaratencionSoapIn">
+    <wsdl:part name="parameters" element="tns:eliminaratencion" />
+  </wsdl:message>
+  <wsdl:message name="eliminaratencionSoapOut">
+    <wsdl:part name="parameters" element="tns:eliminaratencionResponse" />
+  </wsdl:message>
+  <wsdl:message name="buscar_por_fechasSoapIn">
+    <wsdl:part name="parameters" element="tns:buscar_por_fechas" />
+  </wsdl:message>
+  <wsdl:message name="buscar_por_fechasSoapOut">
+    <wsdl:part name="parameters" element="tns:buscar_por_fechasResponse" />
+  </wsdl:message>
+  <wsdl:portType name="wsatencionticketSoap">
+    <wsdl:operation name="Listadoats">
+      <wsdl:input message="tns:ListadoatsSoapIn" />
+      <wsdl:output message="tns:ListadoatsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="atencionticket">
+      <wsdl:input message="tns:atencionticketSoapIn" />
+      <wsdl:output message="tns:atencionticketSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="insertatencionticket">
+      <wsdl:input message="tns:insertatencionticketSoapIn" />
+      <wsdl:output message="tns:insertatencionticketSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="actualizaratencionticket">
+      <wsdl:input message="tns:actualizaratencionticketSoapIn" />
+      <wsdl:output message="tns:actualizaratencionticketSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="eliminaratencion">
+      <wsdl:input message="tns:eliminaratencionSoapIn" />
+      <wsdl:output message="tns:eliminaratencionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="buscar_por_fechas">
+      <wsdl:input message="tns:buscar_por_fechasSoapIn" />
+      <wsdl:output message="tns:buscar_por_fechasSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="wsatencionticketSoap" type="tns:wsatencionticketSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Listadoats">
+      <soap:operation soapAction="http://tempuri.org/Listadoats" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="atencionticket">
+      <soap:operation soapAction="http://tempuri.org/atencionticket" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insertatencionticket">
+      <soap:operation soapAction="http://tempuri.org/insertatencionticket" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="actualizaratencionticket">
+      <soap:operation soapAction="http://tempuri.org/actualizaratencionticket" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="eliminaratencion">
+      <soap:operation soapAction="http://tempuri.org/eliminaratencion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscar_por_fechas">
+      <soap:operation soapAction="http://tempuri.org/buscar_por_fechas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="wsatencionticketSoap12" type="tns:wsatencionticketSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Listadoats">
+      <soap12:operation soapAction="http://tempuri.org/Listadoats" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="atencionticket">
+      <soap12:operation soapAction="http://tempuri.org/atencionticket" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insertatencionticket">
+      <soap12:operation soapAction="http://tempuri.org/insertatencionticket" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="actualizaratencionticket">
+      <soap12:operation soapAction="http://tempuri.org/actualizaratencionticket" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="eliminaratencion">
+      <soap12:operation soapAction="http://tempuri.org/eliminaratencion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscar_por_fechas">
+      <soap12:operation soapAction="http://tempuri.org/buscar_por_fechas" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="wsatencionticket">
+    <wsdl:port name="wsatencionticketSoap" binding="tns:wsatencionticketSoap">
+      <soap:address location="http://localhost/sistemadetickets/wsatencionticket.asmx" />
+    </wsdl:port>
+    <wsdl:port name="wsatencionticketSoap12" binding="tns:wsatencionticketSoap12">
+      <soap12:address location="http://localhost/sistemadetickets/wsatencionticket.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

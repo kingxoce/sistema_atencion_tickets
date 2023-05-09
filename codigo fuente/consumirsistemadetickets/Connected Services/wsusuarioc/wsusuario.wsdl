@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="listado_de_usuarios">
+        <s:complexType />
+      </s:element>
+      <s:element name="listado_de_usuariosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="listado_de_usuariosResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="usuario">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="idUsuario" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="usuarioResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="usuarioResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="insertar_un_usuario">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="idUsuario" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="carne" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="idEmpleado" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="correo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="insertar_un_usuarioResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="insertar_un_usuarioResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="actualizacion_de_usuario">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="idUsuario" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="carne" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="idEmpleado" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="correo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="actualizacion_de_usuarioResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="actualizacion_de_usuarioResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="eliminar_un_usuario">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="idUsuario" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="eliminar_un_usuarioResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="eliminar_un_usuarioResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="listado_de_usuariosSoapIn">
+    <wsdl:part name="parameters" element="tns:listado_de_usuarios" />
+  </wsdl:message>
+  <wsdl:message name="listado_de_usuariosSoapOut">
+    <wsdl:part name="parameters" element="tns:listado_de_usuariosResponse" />
+  </wsdl:message>
+  <wsdl:message name="usuarioSoapIn">
+    <wsdl:part name="parameters" element="tns:usuario" />
+  </wsdl:message>
+  <wsdl:message name="usuarioSoapOut">
+    <wsdl:part name="parameters" element="tns:usuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="insertar_un_usuarioSoapIn">
+    <wsdl:part name="parameters" element="tns:insertar_un_usuario" />
+  </wsdl:message>
+  <wsdl:message name="insertar_un_usuarioSoapOut">
+    <wsdl:part name="parameters" element="tns:insertar_un_usuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="actualizacion_de_usuarioSoapIn">
+    <wsdl:part name="parameters" element="tns:actualizacion_de_usuario" />
+  </wsdl:message>
+  <wsdl:message name="actualizacion_de_usuarioSoapOut">
+    <wsdl:part name="parameters" element="tns:actualizacion_de_usuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="eliminar_un_usuarioSoapIn">
+    <wsdl:part name="parameters" element="tns:eliminar_un_usuario" />
+  </wsdl:message>
+  <wsdl:message name="eliminar_un_usuarioSoapOut">
+    <wsdl:part name="parameters" element="tns:eliminar_un_usuarioResponse" />
+  </wsdl:message>
+  <wsdl:portType name="wsusuarioSoap">
+    <wsdl:operation name="listado_de_usuarios">
+      <wsdl:input message="tns:listado_de_usuariosSoapIn" />
+      <wsdl:output message="tns:listado_de_usuariosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="usuario">
+      <wsdl:input message="tns:usuarioSoapIn" />
+      <wsdl:output message="tns:usuarioSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="insertar_un_usuario">
+      <wsdl:input message="tns:insertar_un_usuarioSoapIn" />
+      <wsdl:output message="tns:insertar_un_usuarioSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="actualizacion_de_usuario">
+      <wsdl:input message="tns:actualizacion_de_usuarioSoapIn" />
+      <wsdl:output message="tns:actualizacion_de_usuarioSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="eliminar_un_usuario">
+      <wsdl:input message="tns:eliminar_un_usuarioSoapIn" />
+      <wsdl:output message="tns:eliminar_un_usuarioSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="wsusuarioSoap" type="tns:wsusuarioSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="listado_de_usuarios">
+      <soap:operation soapAction="http://tempuri.org/listado_de_usuarios" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="usuario">
+      <soap:operation soapAction="http://tempuri.org/usuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insertar_un_usuario">
+      <soap:operation soapAction="http://tempuri.org/insertar_un_usuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="actualizacion_de_usuario">
+      <soap:operation soapAction="http://tempuri.org/actualizacion_de_usuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="eliminar_un_usuario">
+      <soap:operation soapAction="http://tempuri.org/eliminar_un_usuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="wsusuarioSoap12" type="tns:wsusuarioSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="listado_de_usuarios">
+      <soap12:operation soapAction="http://tempuri.org/listado_de_usuarios" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="usuario">
+      <soap12:operation soapAction="http://tempuri.org/usuario" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insertar_un_usuario">
+      <soap12:operation soapAction="http://tempuri.org/insertar_un_usuario" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="actualizacion_de_usuario">
+      <soap12:operation soapAction="http://tempuri.org/actualizacion_de_usuario" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="eliminar_un_usuario">
+      <soap12:operation soapAction="http://tempuri.org/eliminar_un_usuario" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="wsusuario">
+    <wsdl:port name="wsusuarioSoap" binding="tns:wsusuarioSoap">
+      <soap:address location="http://localhost/sistemadetickets/wsusuario.asmx" />
+    </wsdl:port>
+    <wsdl:port name="wsusuarioSoap12" binding="tns:wsusuarioSoap12">
+      <soap12:address location="http://localhost/sistemadetickets/wsusuario.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

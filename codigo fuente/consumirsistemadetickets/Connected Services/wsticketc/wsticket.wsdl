@@ -1,0 +1,390 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="Lista_Tickets">
+        <s:complexType />
+      </s:element>
+      <s:element name="Lista_TicketsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Lista_TicketsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="reverse">
+        <s:complexType />
+      </s:element>
+      <s:element name="reverseResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="reverseResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Tickets">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idTicket" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TicketsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TicketsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="insertar_Tickets">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="carne" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="idAtencion" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="insertar_TicketsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="insertar_TicketsResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="actualizar_tickets">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idTicket" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="carne" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="idAtencion" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="actualizar_ticketsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="actualizar_ticketsResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="borrar_tickets">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idticket" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="borrar_ticketsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="borrar_ticketsResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="buscar_por_motivos">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idAtencion" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="buscar_por_motivosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="buscar_por_motivosResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="listado2">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idAtencion" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="estado" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="listado2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="listado2Result">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="Lista_TicketsSoapIn">
+    <wsdl:part name="parameters" element="tns:Lista_Tickets" />
+  </wsdl:message>
+  <wsdl:message name="Lista_TicketsSoapOut">
+    <wsdl:part name="parameters" element="tns:Lista_TicketsResponse" />
+  </wsdl:message>
+  <wsdl:message name="reverseSoapIn">
+    <wsdl:part name="parameters" element="tns:reverse" />
+  </wsdl:message>
+  <wsdl:message name="reverseSoapOut">
+    <wsdl:part name="parameters" element="tns:reverseResponse" />
+  </wsdl:message>
+  <wsdl:message name="TicketsSoapIn">
+    <wsdl:part name="parameters" element="tns:Tickets" />
+  </wsdl:message>
+  <wsdl:message name="TicketsSoapOut">
+    <wsdl:part name="parameters" element="tns:TicketsResponse" />
+  </wsdl:message>
+  <wsdl:message name="insertar_TicketsSoapIn">
+    <wsdl:part name="parameters" element="tns:insertar_Tickets" />
+  </wsdl:message>
+  <wsdl:message name="insertar_TicketsSoapOut">
+    <wsdl:part name="parameters" element="tns:insertar_TicketsResponse" />
+  </wsdl:message>
+  <wsdl:message name="actualizar_ticketsSoapIn">
+    <wsdl:part name="parameters" element="tns:actualizar_tickets" />
+  </wsdl:message>
+  <wsdl:message name="actualizar_ticketsSoapOut">
+    <wsdl:part name="parameters" element="tns:actualizar_ticketsResponse" />
+  </wsdl:message>
+  <wsdl:message name="borrar_ticketsSoapIn">
+    <wsdl:part name="parameters" element="tns:borrar_tickets" />
+  </wsdl:message>
+  <wsdl:message name="borrar_ticketsSoapOut">
+    <wsdl:part name="parameters" element="tns:borrar_ticketsResponse" />
+  </wsdl:message>
+  <wsdl:message name="buscar_por_motivosSoapIn">
+    <wsdl:part name="parameters" element="tns:buscar_por_motivos" />
+  </wsdl:message>
+  <wsdl:message name="buscar_por_motivosSoapOut">
+    <wsdl:part name="parameters" element="tns:buscar_por_motivosResponse" />
+  </wsdl:message>
+  <wsdl:message name="listado2SoapIn">
+    <wsdl:part name="parameters" element="tns:listado2" />
+  </wsdl:message>
+  <wsdl:message name="listado2SoapOut">
+    <wsdl:part name="parameters" element="tns:listado2Response" />
+  </wsdl:message>
+  <wsdl:portType name="wsticketSoap">
+    <wsdl:operation name="Lista_Tickets">
+      <wsdl:input message="tns:Lista_TicketsSoapIn" />
+      <wsdl:output message="tns:Lista_TicketsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="reverse">
+      <wsdl:input message="tns:reverseSoapIn" />
+      <wsdl:output message="tns:reverseSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Tickets">
+      <wsdl:input message="tns:TicketsSoapIn" />
+      <wsdl:output message="tns:TicketsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="insertar_Tickets">
+      <wsdl:input message="tns:insertar_TicketsSoapIn" />
+      <wsdl:output message="tns:insertar_TicketsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="actualizar_tickets">
+      <wsdl:input message="tns:actualizar_ticketsSoapIn" />
+      <wsdl:output message="tns:actualizar_ticketsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="borrar_tickets">
+      <wsdl:input message="tns:borrar_ticketsSoapIn" />
+      <wsdl:output message="tns:borrar_ticketsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="buscar_por_motivos">
+      <wsdl:input message="tns:buscar_por_motivosSoapIn" />
+      <wsdl:output message="tns:buscar_por_motivosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="listado2">
+      <wsdl:input message="tns:listado2SoapIn" />
+      <wsdl:output message="tns:listado2SoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="wsticketSoap" type="tns:wsticketSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Lista_Tickets">
+      <soap:operation soapAction="http://tempuri.org/Lista_Tickets" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="reverse">
+      <soap:operation soapAction="http://tempuri.org/reverse" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Tickets">
+      <soap:operation soapAction="http://tempuri.org/Tickets" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insertar_Tickets">
+      <soap:operation soapAction="http://tempuri.org/insertar_Tickets" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="actualizar_tickets">
+      <soap:operation soapAction="http://tempuri.org/actualizar_tickets" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="borrar_tickets">
+      <soap:operation soapAction="http://tempuri.org/borrar_tickets" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscar_por_motivos">
+      <soap:operation soapAction="http://tempuri.org/buscar_por_motivos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listado2">
+      <soap:operation soapAction="http://tempuri.org/listado2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="wsticketSoap12" type="tns:wsticketSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Lista_Tickets">
+      <soap12:operation soapAction="http://tempuri.org/Lista_Tickets" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="reverse">
+      <soap12:operation soapAction="http://tempuri.org/reverse" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Tickets">
+      <soap12:operation soapAction="http://tempuri.org/Tickets" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insertar_Tickets">
+      <soap12:operation soapAction="http://tempuri.org/insertar_Tickets" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="actualizar_tickets">
+      <soap12:operation soapAction="http://tempuri.org/actualizar_tickets" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="borrar_tickets">
+      <soap12:operation soapAction="http://tempuri.org/borrar_tickets" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscar_por_motivos">
+      <soap12:operation soapAction="http://tempuri.org/buscar_por_motivos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listado2">
+      <soap12:operation soapAction="http://tempuri.org/listado2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="wsticket">
+    <wsdl:port name="wsticketSoap" binding="tns:wsticketSoap">
+      <soap:address location="http://localhost/sistemadetickets/wsticket.asmx" />
+    </wsdl:port>
+    <wsdl:port name="wsticketSoap12" binding="tns:wsticketSoap12">
+      <soap12:address location="http://localhost/sistemadetickets/wsticket.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

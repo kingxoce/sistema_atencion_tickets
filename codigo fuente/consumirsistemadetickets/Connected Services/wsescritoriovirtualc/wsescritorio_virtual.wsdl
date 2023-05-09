@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="listadoescritorio">
+        <s:complexType />
+      </s:element>
+      <s:element name="listadoescritorioResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="listadoescritorioResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="escritorio">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idEscritorio" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="escritorioResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="escritorioResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="insertar_escritorio">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idEmpleado" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="numero_de_computador" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="insertar_escritorioResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="insertar_escritorioResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="actualizar_escritorio">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idEscritorio" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="idEmpleado" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="numero_de_computador" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="actualizar_escritorioResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="actualizar_escritorioResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="borrar_escritorio">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idEscritorio" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="borrar_escritorioResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="borrar_escritorioResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="listadoescritorioSoapIn">
+    <wsdl:part name="parameters" element="tns:listadoescritorio" />
+  </wsdl:message>
+  <wsdl:message name="listadoescritorioSoapOut">
+    <wsdl:part name="parameters" element="tns:listadoescritorioResponse" />
+  </wsdl:message>
+  <wsdl:message name="escritorioSoapIn">
+    <wsdl:part name="parameters" element="tns:escritorio" />
+  </wsdl:message>
+  <wsdl:message name="escritorioSoapOut">
+    <wsdl:part name="parameters" element="tns:escritorioResponse" />
+  </wsdl:message>
+  <wsdl:message name="insertar_escritorioSoapIn">
+    <wsdl:part name="parameters" element="tns:insertar_escritorio" />
+  </wsdl:message>
+  <wsdl:message name="insertar_escritorioSoapOut">
+    <wsdl:part name="parameters" element="tns:insertar_escritorioResponse" />
+  </wsdl:message>
+  <wsdl:message name="actualizar_escritorioSoapIn">
+    <wsdl:part name="parameters" element="tns:actualizar_escritorio" />
+  </wsdl:message>
+  <wsdl:message name="actualizar_escritorioSoapOut">
+    <wsdl:part name="parameters" element="tns:actualizar_escritorioResponse" />
+  </wsdl:message>
+  <wsdl:message name="borrar_escritorioSoapIn">
+    <wsdl:part name="parameters" element="tns:borrar_escritorio" />
+  </wsdl:message>
+  <wsdl:message name="borrar_escritorioSoapOut">
+    <wsdl:part name="parameters" element="tns:borrar_escritorioResponse" />
+  </wsdl:message>
+  <wsdl:portType name="wsescritorio_virtualSoap">
+    <wsdl:operation name="listadoescritorio">
+      <wsdl:input message="tns:listadoescritorioSoapIn" />
+      <wsdl:output message="tns:listadoescritorioSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="escritorio">
+      <wsdl:input message="tns:escritorioSoapIn" />
+      <wsdl:output message="tns:escritorioSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="insertar_escritorio">
+      <wsdl:input message="tns:insertar_escritorioSoapIn" />
+      <wsdl:output message="tns:insertar_escritorioSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="actualizar_escritorio">
+      <wsdl:input message="tns:actualizar_escritorioSoapIn" />
+      <wsdl:output message="tns:actualizar_escritorioSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="borrar_escritorio">
+      <wsdl:input message="tns:borrar_escritorioSoapIn" />
+      <wsdl:output message="tns:borrar_escritorioSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="wsescritorio_virtualSoap" type="tns:wsescritorio_virtualSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="listadoescritorio">
+      <soap:operation soapAction="http://tempuri.org/listadoescritorio" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="escritorio">
+      <soap:operation soapAction="http://tempuri.org/escritorio" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insertar_escritorio">
+      <soap:operation soapAction="http://tempuri.org/insertar_escritorio" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="actualizar_escritorio">
+      <soap:operation soapAction="http://tempuri.org/actualizar_escritorio" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="borrar_escritorio">
+      <soap:operation soapAction="http://tempuri.org/borrar_escritorio" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="wsescritorio_virtualSoap12" type="tns:wsescritorio_virtualSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="listadoescritorio">
+      <soap12:operation soapAction="http://tempuri.org/listadoescritorio" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="escritorio">
+      <soap12:operation soapAction="http://tempuri.org/escritorio" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insertar_escritorio">
+      <soap12:operation soapAction="http://tempuri.org/insertar_escritorio" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="actualizar_escritorio">
+      <soap12:operation soapAction="http://tempuri.org/actualizar_escritorio" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="borrar_escritorio">
+      <soap12:operation soapAction="http://tempuri.org/borrar_escritorio" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="wsescritorio_virtual">
+    <wsdl:port name="wsescritorio_virtualSoap" binding="tns:wsescritorio_virtualSoap">
+      <soap:address location="http://localhost/sistemadetickets/wsescritorio_virtual.asmx" />
+    </wsdl:port>
+    <wsdl:port name="wsescritorio_virtualSoap12" binding="tns:wsescritorio_virtualSoap12">
+      <soap12:address location="http://localhost/sistemadetickets/wsescritorio_virtual.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

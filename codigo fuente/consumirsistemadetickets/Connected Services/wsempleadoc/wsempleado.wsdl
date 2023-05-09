@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="listaempleados">
+        <s:complexType />
+      </s:element>
+      <s:element name="listaempleadosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="listaempleadosResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="buscar_empleados">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idempleado" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="buscar_empleadosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="buscar_empleadosResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="insertar_empleado">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idEmpleado" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="nombre" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="puesto" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="correo" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="telefono" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="dirreccion" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="sueldo" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="insertar_empleadoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="insertar_empleadoResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="actualizar_empleado">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idEmpleado" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="nombre" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="puesto" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="correo" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="telefono" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="dirreccion" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="sueldo" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="actualizar_empleadoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="actualizar_empleadoResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="eliminar_empleado">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idEmpleado" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="eliminar_empleadoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="eliminar_empleadoResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="listaempleadosSoapIn">
+    <wsdl:part name="parameters" element="tns:listaempleados" />
+  </wsdl:message>
+  <wsdl:message name="listaempleadosSoapOut">
+    <wsdl:part name="parameters" element="tns:listaempleadosResponse" />
+  </wsdl:message>
+  <wsdl:message name="buscar_empleadosSoapIn">
+    <wsdl:part name="parameters" element="tns:buscar_empleados" />
+  </wsdl:message>
+  <wsdl:message name="buscar_empleadosSoapOut">
+    <wsdl:part name="parameters" element="tns:buscar_empleadosResponse" />
+  </wsdl:message>
+  <wsdl:message name="insertar_empleadoSoapIn">
+    <wsdl:part name="parameters" element="tns:insertar_empleado" />
+  </wsdl:message>
+  <wsdl:message name="insertar_empleadoSoapOut">
+    <wsdl:part name="parameters" element="tns:insertar_empleadoResponse" />
+  </wsdl:message>
+  <wsdl:message name="actualizar_empleadoSoapIn">
+    <wsdl:part name="parameters" element="tns:actualizar_empleado" />
+  </wsdl:message>
+  <wsdl:message name="actualizar_empleadoSoapOut">
+    <wsdl:part name="parameters" element="tns:actualizar_empleadoResponse" />
+  </wsdl:message>
+  <wsdl:message name="eliminar_empleadoSoapIn">
+    <wsdl:part name="parameters" element="tns:eliminar_empleado" />
+  </wsdl:message>
+  <wsdl:message name="eliminar_empleadoSoapOut">
+    <wsdl:part name="parameters" element="tns:eliminar_empleadoResponse" />
+  </wsdl:message>
+  <wsdl:portType name="wsempleadoSoap">
+    <wsdl:operation name="listaempleados">
+      <wsdl:input message="tns:listaempleadosSoapIn" />
+      <wsdl:output message="tns:listaempleadosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="buscar_empleados">
+      <wsdl:input message="tns:buscar_empleadosSoapIn" />
+      <wsdl:output message="tns:buscar_empleadosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="insertar_empleado">
+      <wsdl:input message="tns:insertar_empleadoSoapIn" />
+      <wsdl:output message="tns:insertar_empleadoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="actualizar_empleado">
+      <wsdl:input message="tns:actualizar_empleadoSoapIn" />
+      <wsdl:output message="tns:actualizar_empleadoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="eliminar_empleado">
+      <wsdl:input message="tns:eliminar_empleadoSoapIn" />
+      <wsdl:output message="tns:eliminar_empleadoSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="wsempleadoSoap" type="tns:wsempleadoSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="listaempleados">
+      <soap:operation soapAction="http://tempuri.org/listaempleados" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscar_empleados">
+      <soap:operation soapAction="http://tempuri.org/buscar_empleados" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insertar_empleado">
+      <soap:operation soapAction="http://tempuri.org/insertar_empleado" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="actualizar_empleado">
+      <soap:operation soapAction="http://tempuri.org/actualizar_empleado" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="eliminar_empleado">
+      <soap:operation soapAction="http://tempuri.org/eliminar_empleado" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="wsempleadoSoap12" type="tns:wsempleadoSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="listaempleados">
+      <soap12:operation soapAction="http://tempuri.org/listaempleados" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscar_empleados">
+      <soap12:operation soapAction="http://tempuri.org/buscar_empleados" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insertar_empleado">
+      <soap12:operation soapAction="http://tempuri.org/insertar_empleado" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="actualizar_empleado">
+      <soap12:operation soapAction="http://tempuri.org/actualizar_empleado" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="eliminar_empleado">
+      <soap12:operation soapAction="http://tempuri.org/eliminar_empleado" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="wsempleado">
+    <wsdl:port name="wsempleadoSoap" binding="tns:wsempleadoSoap">
+      <soap:address location="http://localhost/sistemadetickets/wsempleado.asmx" />
+    </wsdl:port>
+    <wsdl:port name="wsempleadoSoap12" binding="tns:wsempleadoSoap12">
+      <soap12:address location="http://localhost/sistemadetickets/wsempleado.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

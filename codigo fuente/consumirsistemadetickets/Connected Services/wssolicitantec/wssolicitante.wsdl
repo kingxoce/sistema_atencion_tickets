@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="listadosolicitantes">
+        <s:complexType />
+      </s:element>
+      <s:element name="listadosolicitantesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="listadosolicitantesResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="solicitante">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="carne" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="solicitanteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="solicitanteResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="insertar_solicitante">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="carne" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="nombre" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="apellido" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="correo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="insertar_solicitanteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="insertar_solicitanteResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="actualizar_solicitante">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="carne" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="nombre" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="apellido" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="correo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="actualizar_solicitanteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="actualizar_solicitanteResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="borrar_solicitante">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="carne" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="borrar_solicitanteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="borrar_solicitanteResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="listadosolicitantesSoapIn">
+    <wsdl:part name="parameters" element="tns:listadosolicitantes" />
+  </wsdl:message>
+  <wsdl:message name="listadosolicitantesSoapOut">
+    <wsdl:part name="parameters" element="tns:listadosolicitantesResponse" />
+  </wsdl:message>
+  <wsdl:message name="solicitanteSoapIn">
+    <wsdl:part name="parameters" element="tns:solicitante" />
+  </wsdl:message>
+  <wsdl:message name="solicitanteSoapOut">
+    <wsdl:part name="parameters" element="tns:solicitanteResponse" />
+  </wsdl:message>
+  <wsdl:message name="insertar_solicitanteSoapIn">
+    <wsdl:part name="parameters" element="tns:insertar_solicitante" />
+  </wsdl:message>
+  <wsdl:message name="insertar_solicitanteSoapOut">
+    <wsdl:part name="parameters" element="tns:insertar_solicitanteResponse" />
+  </wsdl:message>
+  <wsdl:message name="actualizar_solicitanteSoapIn">
+    <wsdl:part name="parameters" element="tns:actualizar_solicitante" />
+  </wsdl:message>
+  <wsdl:message name="actualizar_solicitanteSoapOut">
+    <wsdl:part name="parameters" element="tns:actualizar_solicitanteResponse" />
+  </wsdl:message>
+  <wsdl:message name="borrar_solicitanteSoapIn">
+    <wsdl:part name="parameters" element="tns:borrar_solicitante" />
+  </wsdl:message>
+  <wsdl:message name="borrar_solicitanteSoapOut">
+    <wsdl:part name="parameters" element="tns:borrar_solicitanteResponse" />
+  </wsdl:message>
+  <wsdl:portType name="wssolicitanteSoap">
+    <wsdl:operation name="listadosolicitantes">
+      <wsdl:input message="tns:listadosolicitantesSoapIn" />
+      <wsdl:output message="tns:listadosolicitantesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="solicitante">
+      <wsdl:input message="tns:solicitanteSoapIn" />
+      <wsdl:output message="tns:solicitanteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="insertar_solicitante">
+      <wsdl:input message="tns:insertar_solicitanteSoapIn" />
+      <wsdl:output message="tns:insertar_solicitanteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="actualizar_solicitante">
+      <wsdl:input message="tns:actualizar_solicitanteSoapIn" />
+      <wsdl:output message="tns:actualizar_solicitanteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="borrar_solicitante">
+      <wsdl:input message="tns:borrar_solicitanteSoapIn" />
+      <wsdl:output message="tns:borrar_solicitanteSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="wssolicitanteSoap" type="tns:wssolicitanteSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="listadosolicitantes">
+      <soap:operation soapAction="http://tempuri.org/listadosolicitantes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="solicitante">
+      <soap:operation soapAction="http://tempuri.org/solicitante" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insertar_solicitante">
+      <soap:operation soapAction="http://tempuri.org/insertar_solicitante" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="actualizar_solicitante">
+      <soap:operation soapAction="http://tempuri.org/actualizar_solicitante" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="borrar_solicitante">
+      <soap:operation soapAction="http://tempuri.org/borrar_solicitante" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="wssolicitanteSoap12" type="tns:wssolicitanteSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="listadosolicitantes">
+      <soap12:operation soapAction="http://tempuri.org/listadosolicitantes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="solicitante">
+      <soap12:operation soapAction="http://tempuri.org/solicitante" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insertar_solicitante">
+      <soap12:operation soapAction="http://tempuri.org/insertar_solicitante" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="actualizar_solicitante">
+      <soap12:operation soapAction="http://tempuri.org/actualizar_solicitante" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="borrar_solicitante">
+      <soap12:operation soapAction="http://tempuri.org/borrar_solicitante" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="wssolicitante">
+    <wsdl:port name="wssolicitanteSoap" binding="tns:wssolicitanteSoap">
+      <soap:address location="http://localhost/sistemadetickets/wssolicitante.asmx" />
+    </wsdl:port>
+    <wsdl:port name="wssolicitanteSoap12" binding="tns:wssolicitanteSoap12">
+      <soap12:address location="http://localhost/sistemadetickets/wssolicitante.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

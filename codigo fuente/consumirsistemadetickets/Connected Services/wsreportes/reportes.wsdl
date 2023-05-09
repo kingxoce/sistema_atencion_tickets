@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="buscartickets">
+        <s:complexType />
+      </s:element>
+      <s:element name="buscarticketsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="buscarticketsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="buscarescritorio">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="fecha1i" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="fecha2f" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="buscarescritorioResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="buscarescritorioResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="buscarticketsSoapIn">
+    <wsdl:part name="parameters" element="tns:buscartickets" />
+  </wsdl:message>
+  <wsdl:message name="buscarticketsSoapOut">
+    <wsdl:part name="parameters" element="tns:buscarticketsResponse" />
+  </wsdl:message>
+  <wsdl:message name="buscarescritorioSoapIn">
+    <wsdl:part name="parameters" element="tns:buscarescritorio" />
+  </wsdl:message>
+  <wsdl:message name="buscarescritorioSoapOut">
+    <wsdl:part name="parameters" element="tns:buscarescritorioResponse" />
+  </wsdl:message>
+  <wsdl:portType name="reportesSoap">
+    <wsdl:operation name="buscartickets">
+      <wsdl:input message="tns:buscarticketsSoapIn" />
+      <wsdl:output message="tns:buscarticketsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="buscarescritorio">
+      <wsdl:input message="tns:buscarescritorioSoapIn" />
+      <wsdl:output message="tns:buscarescritorioSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="reportesSoap" type="tns:reportesSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="buscartickets">
+      <soap:operation soapAction="http://tempuri.org/buscartickets" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscarescritorio">
+      <soap:operation soapAction="http://tempuri.org/buscarescritorio" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="reportesSoap12" type="tns:reportesSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="buscartickets">
+      <soap12:operation soapAction="http://tempuri.org/buscartickets" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscarescritorio">
+      <soap12:operation soapAction="http://tempuri.org/buscarescritorio" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="reportes">
+    <wsdl:port name="reportesSoap" binding="tns:reportesSoap">
+      <soap:address location="http://localhost/sistemadetickets/reportes.asmx" />
+    </wsdl:port>
+    <wsdl:port name="reportesSoap12" binding="tns:reportesSoap12">
+      <soap12:address location="http://localhost/sistemadetickets/reportes.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
